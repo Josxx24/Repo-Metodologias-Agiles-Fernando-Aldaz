@@ -9,6 +9,6 @@ public class HelloWebController {
     //generar la ruta de la pagina web
     @RequestMapping("/helloweb")
     public String helloHandler() {
-        return "hello";
+        return "hello.html";
     }
 }
