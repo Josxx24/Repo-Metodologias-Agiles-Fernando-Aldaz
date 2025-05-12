@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<form th:action="@{/saludoform}" th:object="${userData}" method="post">
+    <table>
+        <tr>
+            <td>Nombre:</td>
+            <td><input type="text" th:field="*{nombre}" /></td>
+            <td th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></td> <!-- Muestra errores si existen -->
+        </tr>
+        <tr>
+            <td><button type="submit">Enviar</button></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
