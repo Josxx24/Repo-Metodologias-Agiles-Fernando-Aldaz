@@ -9,5 +9,4 @@ class PrimerSpringEjemplo01ApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

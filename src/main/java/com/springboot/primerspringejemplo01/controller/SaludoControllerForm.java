@@ -28,13 +28,14 @@ public class SaludoControllerForm {
 
     @PostMapping("/saludoform")
     public String checkPersonInfo(@ModelAttribute @Valid UserData userData, BindingResult bindingResult, Model model) {
-        // Si hay errores de validación, regresa al formulario
         if (bindingResult.hasErrors()) {
             return "formRegistro";
         }
 
-        // Si no hay errores, pasa el mensaje al modelo y muestra la vista de saludo
-        model.addAttribute("mensaje", service.saluda(userData.getNombre()));
-        return "saludo";  // Regresa a la vista de saludo
+        String nombre = userData.getNombre();
+        model.addAttribute("mensaje", service.saluda(nombre));
+        model.addAttribute("esPalindromo", service.esPalindromo(nombre));
+
+        return "saludo";
     }
 }

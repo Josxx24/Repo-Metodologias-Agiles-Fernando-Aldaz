@@ -1,7 +1,16 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Saludo</title>
+</head>
+<body>
+<h1 th:text="${mensaje}"></h1>
 
-<h1 th:text="'Saludo: ' + ${mensaje}"> </h1>
+<p th:if="${esPalindromo != null}">
+    <span th:if="${esPalindromo}" style="color:green;">La palabra es un palíndromo ✅</span>
+    <span th:unless="${esPalindromo}" style="color:red;">La palabra no es un palíndromo ❌</span>
+</p>
 
+<a href="/saludoform">Volver</a>
+</body>
 </html>
